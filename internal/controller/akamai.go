@@ -23,6 +23,7 @@ import (
 	"github.com/crossplane/crossplane-runtime/pkg/logging"
 
 	"github.com/crossplane-contrib/provider-akamai/internal/controller/config"
+	"github.com/crossplane-contrib/provider-akamai/internal/controller/property"
 )
 
 // Setup creates all Template controllers with the supplied logger and adds them to
@@ -30,7 +31,7 @@ import (
 func Setup(mgr ctrl.Manager, l logging.Logger, wl workqueue.RateLimiter) error {
 	for _, setup := range []func(ctrl.Manager, logging.Logger, workqueue.RateLimiter) error{
 		config.Setup,
-		// property.Setup,
+		property.Setup,
 	} {
 		if err := setup(mgr, l, wl); err != nil {
 			return err

@@ -1,0 +1,9 @@
+apiVersion: properties.akamai.crossplane.io/v1alpha1
+kind: Property
+metadata:
+  name: example
+spec:
+  forProvider:
+    accountId: f00bar
+  providerConfigRef:
+    name: default

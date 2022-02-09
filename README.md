@@ -8,7 +8,12 @@ with the following features that are meant to be refactored:
 - A `MyType` resource type that serves as an example managed resource.
 - A managed resource controller that reconciles `MyType` objects and simply
   prints their configuration in its `Observe` method.
+## create secret
 
+follow instructions from Akamai to create an edgerc file: https://techdocs.akamai.com/developer/docs/set-up-authentication-credentials
+```
+k create secret generic akamai-credentials -n crossplane-system --from-file=edgerc=edgercfile.txt
+```
 ## Developing
 
 1. Use this repository as a template to create a new one.

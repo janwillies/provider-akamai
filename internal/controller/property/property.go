@@ -128,13 +128,13 @@ type external struct {
 }
 
 func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.ExternalObservation, error) {
-	cr, ok := mg.(*v1alpha1.Property)
-	if !ok {
-		return managed.ExternalObservation{}, errors.New(errNotProperty)
-	}
+	// cr, ok := mg.(*v1alpha1.Property)
+	// if !ok {
+	// 	return managed.ExternalObservation{}, errors.New(errNotProperty)
+	// }
 
 	// These fmt statements should be removed in the real implementation.
-	fmt.Printf("Observing: %+v", cr)
+	// fmt.Printf("Observing: %+v", cr)
 
 	return managed.ExternalObservation{
 		// Return false when the external resource does not exist. This lets
@@ -154,12 +154,12 @@ func (c *external) Observe(ctx context.Context, mg resource.Managed) (managed.Ex
 }
 
 func (c *external) Create(ctx context.Context, mg resource.Managed) (managed.ExternalCreation, error) {
-	cr, ok := mg.(*v1alpha1.Property)
+	_, ok := mg.(*v1alpha1.Property)
 	if !ok {
 		return managed.ExternalCreation{}, errors.New(errNotProperty)
 	}
 
-	fmt.Printf("Creating: %+v", cr)
+	// fmt.Printf("Creating: %+v", cr)
 
 	return managed.ExternalCreation{
 		// Optionally return any details that may be required to connect to the

@@ -27,12 +27,42 @@ import (
 
 // PropertyParameters are the configurable fields of a Property.
 type PropertyParameters struct {
-	ConfigurableField string `json:"configurableField"`
+	AccountID string `json:"accountId"`
+	// +optional
+	AssetID string `json:"assetId,omitempty"`
+	// +optional
+	ContractID string `json:"contractId,omitempty"`
+	// +optional
+	GroupID string `json:"groupId,omitempty"`
+	// +optional
+	LatestVersion int `json:"latestVersion,omitempty"`
+	// +optional
+	Note string `json:"note,omitempty"`
+	// +optional
+	ProductID string `json:"productId,omitempty"`
+	// +optional
+	ProductionVersion *int `json:"productionVersion,omitempty"`
+	// +optional
+	PropertyID string `json:"propertyId,omitempty"`
+	// +optional
+	PropertyName string `json:"propertyName,omitempty"`
+	// +optional
+	RuleFormat string `json:"ruleFormat,omitempty"`
+	// +optional
+	StagingVersion *int `json:"stagingVersion,omitempty"`
 }
 
 // PropertyObservation are the observable fields of a Property.
 type PropertyObservation struct {
+	// Response
+	// Properties PropertiesItems `json:"properties"`
+	// Property   *Property       `json:"-"`
 	ObservableField string `json:"observableField,omitempty"`
+}
+
+// PropertiesItems is an array of properties
+type PropertiesItems struct {
+	Items []*Property `json:"items"`
 }
 
 // A PropertySpec defines the desired state of a Property.

@@ -65,10 +65,32 @@ spec:
               forProvider:
                 description: PropertyParameters are the configurable fields of a Property.
                 properties:
-                  configurableField:
+                  accountId:
                     type: string
+                  assetId:
+                    type: string
+                  contractId:
+                    type: string
+                  groupId:
+                    type: string
+                  latestVersion:
+                    type: integer
+                  note:
+                    type: string
+                  productId:
+                    type: string
+                  productionVersion:
+                    type: integer
+                  propertyId:
+                    type: string
+                  propertyName:
+                    type: string
+                  ruleFormat:
+                    type: string
+                  stagingVersion:
+                    type: integer
                 required:
-                - configurableField
+                - accountId
                 type: object
               providerConfigRef:
                 default:
@@ -121,6 +143,8 @@ spec:
                 description: PropertyObservation are the observable fields of a Property.
                 properties:
                   observableField:
+                    description: Response Properties PropertiesItems `json:"properties"`
+                      Property   *Property       `json:"-"`
                     type: string
                 type: object
               conditions:
