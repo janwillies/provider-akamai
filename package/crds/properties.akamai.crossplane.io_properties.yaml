@@ -6,18 +6,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.6.2
   creationTimestamp: null
-  name: mytypes.sample.template.crossplane.io
+  name: properties.properties.akamai.crossplane.io
 spec:
-  group: sample.template.crossplane.io
+  group: properties.akamai.crossplane.io
   names:
     categories:
     - crossplane
     - managed
-    - template
-    kind: MyType
-    listKind: MyTypeList
-    plural: mytypes
-    singular: mytype
+    - akamai
+    kind: Property
+    listKind: PropertyList
+    plural: properties
+    singular: property
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -36,7 +36,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: A MyType is an example API type.
+        description: A Property is an example API type.
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -51,7 +51,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: A MyTypeSpec defines the desired state of a MyType.
+            description: A PropertySpec defines the desired state of a Property.
             properties:
               deletionPolicy:
                 default: Delete
@@ -63,7 +63,7 @@ spec:
                 - Delete
                 type: string
               forProvider:
-                description: MyTypeParameters are the configurable fields of a MyType.
+                description: PropertyParameters are the configurable fields of a Property.
                 properties:
                   configurableField:
                     type: string
@@ -115,10 +115,10 @@ spec:
             - forProvider
             type: object
           status:
-            description: A MyTypeStatus represents the observed state of a MyType.
+            description: A PropertyStatus represents the observed state of a Property.
             properties:
               atProvider:
-                description: MyTypeObservation are the observable fields of a MyType.
+                description: PropertyObservation are the observable fields of a Property.
                 properties:
                   observableField:
                     type: string
